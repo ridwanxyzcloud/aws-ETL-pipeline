@@ -2,6 +2,7 @@
 
 ## Overview
 This repository contains the code and documentation for building an ETL (Extract, Transform, Load) pipeline on the AWS Cloud using various AWS services such as Glue, Athena, Lambda, and Redshift. The primary objective of this project is to provide a scalable and efficient solution for processing, transforming, and loading data from diverse sources into a centralized data warehouse for analysis and reporting purposes.
+This repository also have a comprehensive tutorial on how to use the major tools on AWS for data enginners.
 
 ## Features
 - **ETL Scripts**: Python scripts for extracting, transforming, and loading data from various sources into AWS services.
