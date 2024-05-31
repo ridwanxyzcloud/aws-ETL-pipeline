@@ -7,7 +7,6 @@ This repository also have a comprehensive tutorial on how to use the major tools
 ## Features
 - **ETL Scripts**: Python scripts for extracting, transforming, and loading data from various sources into AWS services.
 - **AWS Glue Jobs**: Configuration files and scripts for defining and executing data transformation jobs using AWS Glue.
-- **Lambda Functions**: Scripts for AWS Lambda functions responsible for triggering ETL tasks and other automation tasks.
 - **SQL Queries**: SQL query files for performing data analysis and querying data stored in AWS services like Redshift and Athena.
 - **Documentation**: Detailed documentation covering project overview, setup instructions, architecture diagrams, and usage guidelines.
 - **Tests**: Unit tests and integration tests for ensuring the reliability and correctness of the ETL pipeline components.
@@ -28,6 +27,14 @@ Detailed documentation for the AWS ETL pipeline project can be found in the `doc
 - Architecture Diagrams
 - Usage Guidelines
 
+## Libraries
+- boto3
+- pandas
+- io / SringIO
+- configparser 
+- time
+- redshift-connector
+
 ## Contributing
 Contributions to the AWS ETL pipeline project are welcome! To contribute, follow these steps:
 1. Fork the repository.
@@ -40,5 +47,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 
 ## Additional Information
-For additional information or inquiries, please contact [Ridwan](ridwanclouds@gmail.com).
+For additional information or inquiries, please contact [Ridwan](ridwanclouds@outlook.com).
 
