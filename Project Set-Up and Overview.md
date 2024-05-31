@@ -3,8 +3,8 @@
 - configure your aws cli to 
 Navigate to your aws-cli config file and set your access and sceceret key 
 
-* cd ~/.aws
-* nano config
+    cd ~/.aws
+    * nano config
 
 - OR : 
 
