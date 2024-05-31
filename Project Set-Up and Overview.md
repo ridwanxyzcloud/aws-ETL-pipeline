@@ -4,12 +4,12 @@
 Navigate to your aws-cli config file and set your access and sceceret key 
 
     cd ~/.aws
-    * nano config
+    nano config
 
 - OR : 
 
 
-* aws configure
+    aws configure
 
 - Input access and secrete key
 
@@ -17,7 +17,7 @@ Navigate to your aws-cli config file and set your access and sceceret key
 
 Create a bucket on your aws s3
 
-* aws s3 mb s3://covid-lake-bucket
+    aws s3 mb s3://covid-lake-bucket
 
 
 ### step 2: Download raw data to s3 bucket
@@ -37,11 +37,11 @@ copy the covid data from the aws data registry
 
 # OR : touch the command into a bash file name 'sync_script.sh' 
 # make script executable
-* chmod +x sync_script.sh
+    chmod +x sync_script.sh
 
 # exceute script using CLI
 
-* !bash raw_data.sh
+    !bash raw_data.sh
 
 ![https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/data/raw_data.sh]
 
