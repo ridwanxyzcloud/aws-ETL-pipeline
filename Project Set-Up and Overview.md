@@ -2,46 +2,46 @@
 
 - configure your aws cli to 
 Navigate to your aws-cli config file and set your access and sceceret key 
-cd ~/.aws
-nano config
+
+* cd ~/.aws
+* nano config
 
 - OR : 
 
 
-aws configure
+* aws configure
 
-* Input access and secrete key
+- Input access and secrete key
 
 ### Step 1: Create S3 Bucket 
 
 Create a bucket on your aws s3
 
-
-aws s3 mb s3://covid-lake-bucket
-
+* aws s3 mb s3://covid-lake-bucket
 
 
 ### step 2: Download raw data to s3 bucket
 copy the covid data from the aws data registry
 
 ##### this code extracts all the data directories intended for use in the project
-aws s3 sync s3://covid19-lake/ s3://covid19-lake-bucket/ --exclude "*" --include "enigma-jhu/*" --include "enigma-nytimes-data-in-usa/*" --include "rearc-covid-19-testing-data/*" --include "rearc-usa-hospital-beds/*" --include "static-datasets/*"
 
+* aws s3 sync s3://covid19-lake/ s3://covid19-lake-bucket/ --exclude "*" --include "enigma-jhu/*" --include "enigma-nytimes-data-in-usa/*" --include "rearc-covid-19-testing-data/*" --include "rearc-usa-hospital-beds/*" --include "static-datasets/*"
 
-# OR
-aws s3 sync s3://covid19-lake/enigma-jhu/ s3://covid19-lake-bucket/enigma-jhu/
-aws s3 sync s3://covid19-lake/enigma-nytimes-data-in-usa/ s3://covid19-lake-bucket/enigma-nytimes-data-in-usa/
-aws s3 sync s3://covid19-lake/rearc-covid-19-testing-data/ s3://covid19-lake-bucket/rearc-covid-19-testing-data/
-aws s3 sync s3://covid19-lake/rearc-usa-hospital-beds/ s3://covid19-lake-bucket/rearc-usa-hospital-beds/
-aws s3 sync s3://covid19-lake/static-datasets/ s3://covid19-lake-bucket/static-datasets/
+# OR, sync individually
+
+* aws s3 sync s3://covid19-lake/enigma-jhu/ s3://covid19-lake-bucket/enigma-jhu/
+* aws s3 sync s3://covid19-lake/enigma-nytimes-data-in-usa/ s3://covid19-lake-bucket/enigma-nytimes-data-in-usa/
+* aws s3 sync s3://covid19-lake/rearc-covid-19-testing-data/ s3://covid19-lake-bucket/rearc-covid-19-testing-data/
+* aws s3 sync s3://covid19-lake/rearc-usa-hospital-beds/ s3://covid19-lake-bucket/rearc-usa-hospital-beds/
+* aws s3 sync s3://covid19-lake/static-datasets/ s3://covid19-lake-bucket/static-datasets/
 
 # OR : touch the command into a bash file name 'sync_script.sh' 
 # make script executable
-chmod +x sync_script.sh
+* chmod +x sync_script.sh
 
 # exceute script using CLI
 
-!bash raw_data.sh
+* !bash raw_data.sh
 
 ![https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/data/raw_data.sh]
 
@@ -136,13 +136,13 @@ the redshift data warehouse housing the transformed and final data  can then be 
 
 ### Resources and Scripts
 
-    * This project has an interactive python notebook that can be used in a python environment to properly see a step by step process of the project
+    - This project has an interactive python notebook that can be used in a python environment to properly see a step by step process of the project
 
 [https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/project-notebook.ipynb]
 
-    * AWS Glue Job Script
+    - AWS Glue Job Script
 
 [aws glue job script][https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/55174b97286a6df90e3abf90ee4457a9e3560da9/src/aws_glue_jobs/glue_jobs.py]
 
 
-    * This project also use config parser to fetch sensitive details saved in Config files. Another option you can use is an environment variable
+    - This project also use config parser to fetch sensitive details saved in Config files. Another option you can use is an environment variable
