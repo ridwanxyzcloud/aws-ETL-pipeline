@@ -1,5 +1,5 @@
 # AWS ETL Pipeline
-!()[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/26ec388fd3d66188ccc9b8d489a08ed7c230ad13/data%20model/ETL-Architecture%20.jpg]
+![ETL Pipeline Architecture](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/26ec388fd3d66188ccc9b8d489a08ed7c230ad13/data%20model/ETL-Architecture%20.jpg)
 ## Overview
 This repository contains the code and documentation for building an ETL (Extract, Transform, Load) pipeline on the AWS Cloud using various AWS services such as Glue, Athena, Lambda, and Redshift. The primary objective of this project is to provide a scalable and efficient solution for processing, transforming, and loading data from diverse sources into a centralized data warehouse for analysis and reporting purposes.
 This repository also have a comprehensive tutorial on how to use the major tools on AWS for data enginners.

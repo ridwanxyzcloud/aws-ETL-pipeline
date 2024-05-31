@@ -55,7 +55,7 @@ After getting the data in s3 bucket, use crawler get the full understanding of t
 - create a database for it or add a database if you dont already have one 
 - run on demand
 
-!(Crawler)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/crawler.png]
+![Crawler](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/crawler.png)
 
 
 NOTE: It is very important to attach role for every data source indivually or collectively. All crawler targets must be assigned a role . Otherwise, it will not recognise added folders .
@@ -63,12 +63,12 @@ NOTE: It is very important to attach role for every data source indivually or co
 ### step 4: Run crawler and extract metadata
 Run the crawler
 
-!(tables extracted by crawler)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/crawler_tables.png]
+![tables extracted by crawler](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/crawler_tables.png)
 
 ### step  5: Configure Athena 
 Open athena Query and set the Query result location and encryption to a new bucket that will hold meta data 
 
-!(athena query result location)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/athena_query_location.png]
+![athena query result location](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/athena_query_location.png)
 
 
 ### step 6: Query Extracted Metadata
@@ -79,31 +79,31 @@ This structure is used to better understand the data and generate the project's 
 Generate the DDL sql and use it to create your data model and subsequently your data warehouse.
 - The relational data model
 
-!(relational data model)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/data%20model/covid19-project-1NF.drawio.png]
+![relational data model](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/data%20model/covid19-project-1NF.drawio.png)
 
 - Dimensional and fact Data Model for the aws redshift data warehouse 
-!(data warehouse model)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/data%20model/covid19_DW_2NF.drawio.png]
+![data warehouse model](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/data%20model/covid19_DW_2NF.drawio.png)
 
 ### step 8: Extract and Tranformed raw data 
 Connect to athena and s3 on a notebook to query and extract the data into dataframes using data structures gotten by the crawler.
 
-!(athena and s3 query and extraction)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/athena_s3_query.png]
+![athena and s3 query and extraction](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/athena_s3_query.png)
 
 - Tranform the data to extract the dimensional and fact table needed for the data warehouse.
 
 
 - Staging (Load the output data into s3 bucket).
 
-!(Buffered DW csv to S3)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/buffred_csv_to_s3.png]
+![Buffered DW csv to S3](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/buffred_csv_to_s3.png)
 
 * transfered csv in s3 bucket in 'output-data' directory
-!()[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/DW_csv_files_in_s3_bucket.png]
+![](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/DW_csv_files_in_s3_bucket.png)
 
 ### step 9: DataFrame Schema Extraction using pandas 
 Use pandas to extract the schema of the prepared dataframes
 - use the schema details to create table on redshift.
 
-!(schema extraction)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/schema_extraction.png]
+![schema extraction](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/schema_extraction.png)
 
 ### step10: Configure Redshift
 AWS Redshift does not use cluster like they used to, it is severless and uses workgroup and namespace.
@@ -112,9 +112,9 @@ AWS Redshift does not use cluster like they used to, it is severless and uses wo
 
 - NOTE: permision must be attached to the namespace to allow an service or transaction to s3 or other services
 
-!(namespace configurations)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/namespace_1.png]
+![namespace configurations](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/namespace_1.png)
 
-!()[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/namespace_2.png]
+![](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/namespace_2.png)
 
 ### step11: Run ETL Job in AWS Glue
 
@@ -126,9 +126,9 @@ Run ETL job in python using AWS Glue
 
 (aws glue job script)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/55174b97286a6df90e3abf90ee4457a9e3560da9/src/aws_glue_jobs/glue_jobs.py]
 
-!(redshift-connector path)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/redshift-connector-path.png]
+![redshift-connector path](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/redshift-connector-path.png)
 
-!(datawarehouse)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/reshfit-data-warehouse%20.png]
+![datawarehouse](https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/main/snapshots/reshfit-data-warehouse%20.png)
 
 ### step 12: Connect Reshift to BI Tool 
 
@@ -142,7 +142,7 @@ the redshift data warehouse housing the transformed and final data  can then be 
 
     * AWS Glue Job Script
 
-(aws glue job script)[https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/55174b97286a6df90e3abf90ee4457a9e3560da9/src/aws_glue_jobs/glue_jobs.py]
+[aws glue job script][https://github.com/ridwanxyzcloud/aws-ETL-pipeline/blob/55174b97286a6df90e3abf90ee4457a9e3560da9/src/aws_glue_jobs/glue_jobs.py]
 
 
     * This project also use config parser to fetch sensitive details saved in Config files. Another option you can use is an environment variable
